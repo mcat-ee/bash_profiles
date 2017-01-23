@@ -14,6 +14,15 @@ function ip() {
         echo      #Necessary to ensure the shell prompt wraps to the next line
 }
 
+#
+#               PYTHON SPECIFIC FUNCTIONS
+#
+
+#Shortcut to use django-admin.py 
+function django_admin() {
+	python /usr/local/lib/python2.7/site-packages/django/bin/django-admin.py $*	
+}
+
 
 #
 #               DOCKER FUNCTIONS
