@@ -41,3 +41,9 @@ function clear_docker() {
         docker rmi $(docker images --quiet --filter "dangling=true")
         docker rm -v $(docker ps -a -q -f status=exited)
 }
+
+#Search running docker container names and open a shell into matches
+#TODO: Handle case where more than one valid result
+function dockerbash(){
+        docker exec -it $(docker ps | grep "$*" | awk -F '        ' '{print $1}') bash
+}
